@@ -3,26 +3,28 @@
 
   angular
     .module('lkxfjts')
-    .directive('acmeNavbar', acmeNavbar);
+    .directive('acmeDescription', acmeDescription);
+
 
   /** @ngInject */
-  function acmeNavbar() {
+  function acmeDescription() {
     var directive = {
       restrict: 'E',
-      templateUrl: 'app/components/navbar/navbar.html',
+      templateUrl: 'app/components/descripcion/descripcion.html',
       scope: {
           creationDate: '='
       },
-      controller: NavbarController,
+      controller: descriptionController,
       controllerAs: 'vm',
       bindToController: true,
       replace: true
+
     };
 
     return directive;
 
     /** @ngInject */
-    function NavbarController(moment) {
+    function descriptionController(moment) {
       var vm = this;
 
       // "vm.creation" is avaible by directive option "bindToController: true"
