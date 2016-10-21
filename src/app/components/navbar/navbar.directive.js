@@ -13,21 +13,40 @@
       scope: {
           creationDate: '='
       },
-      controller: NavbarController,
-      controllerAs: 'vm',
-      bindToController: true,
+      link: NavbarController,
       replace: true
     };
 
     return directive;
 
     /** @ngInject */
-    function NavbarController(moment) {
-      var vm = this;
+    function NavbarController($scope, element) {
+      // var a = $('.animateB');
+      // $('[ui-sref]').click(function () { var ancho = $(this).width();var left = $(this).position().left;a.css({left:left+'px',width:ancho+'px'}) })
+      //
+      // var container = angular.element(document);
+      // container.on('scroll', function() {
+      //     if (container.scrollTop() > 100) {
+      //         element.addClass('affix');
+      //     } else {
+      //         element.removeClass('affix');
+      //     }
+      // });
+      $(".navbar-toggle").on("click", function () {
+				    $(this).toggleClass("active");
+			  });
 
-      // "vm.creation" is avaible by directive option "bindToController: true"
-      vm.relativeDate = moment(vm.creationDate).fromNow();
+        $(window).scroll(function() {
+            if ($(".navbar").offset().top > 50) {
+                $(".navbar-fixed-top").addClass("top-nav-collapse");
+            } else {
+                $(".navbar-fixed-top").removeClass("top-nav-collapse");
+            }
+        });
+
     }
   }
+
+
 
 })();
