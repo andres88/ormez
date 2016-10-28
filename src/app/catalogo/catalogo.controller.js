@@ -6,8 +6,20 @@
     .controller('CatalogoController', catalogoController);
 
   /** @ngInject */
-  function catalogoController($timeout, webDevTec, toastr) {
+  function catalogoController($scope, $timeout, webDevTec, toastr) {
     var vm = this;
+    $scope.products = [
+      {
+        img: 'assets/images/productos/converse.png',
+        modelName: 'sukun',
+        description: 'askdhañlksjdñlakjsdajsdlkajsdkjasd'
+      },
+      {
+        img: 'assets/images/productos/converse2.png',
+        modelName: 'sukun 2',
+        description: 'askdhañlksjdñlakjsdajsdlkajsdkjasd'
+      }
+    ];
 
     vm.awesomeThings = [];
     vm.classAnimation = '';
@@ -35,5 +47,27 @@
         awesomeThing.rank = Math.random();
       });
     }
+
+    $(".modal").each(function(index) {
+      $(this).on('show.bs.modal', function(e) {
+        var open = $(this).attr('data-easein');
+        if (open == 'shake') {
+          $('.modal-dialog').velocity('callout.' + open);
+        } else if (open == 'pulse') {
+          $('.modal-dialog').velocity('callout.' + open);
+        } else if (open == 'tada') {
+          $('.modal-dialog').velocity('callout.' + open);
+        } else if (open == 'flash') {
+          $('.modal-dialog').velocity('callout.' + open);
+        } else if (open == 'bounce') {
+          $('.modal-dialog').velocity('callout.' + open);
+        } else if (open == 'swing') {
+          $('.modal-dialog').velocity('callout.' + open);
+        } else {
+          $('.modal-dialog').velocity('transition.' + open);
+        }
+
+      });
+    });
   }
 })();

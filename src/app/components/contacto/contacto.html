@@ -1,4 +1,4 @@
-<div class="modal fade" id="modalContacto" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade" id="modalContacto" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header text-center">
@@ -7,33 +7,32 @@
       </div>
       <div class="modal-body">
 
-        <form class="contactoForm">
-
+        <form class="contactoForm" ng-submit="vm.send(contact, contactForm)" name="contactForm" novalidate>
           <div class="form-group label-floating has-success">
             <label class="control-label">Nombre: </label>
-            <input class="form-control" id="focusedInput1" type="text">
+            <input class="form-control" type="text" ng-model="contact.name" name="name" required>
           </div>
 
-           <div class="form-group label-floating has-success">
+           <div class="form-group label-floating" ng-class="{'has-error': !vm.validateEmail(contact.mail) && contactForm.email.$dirty, 'has-success': vm.validateEmail(contact.mail) || contactForm.email.$pristine }">
             <label class="control-label" for="inputEmail">Correo: </label>
-            <input type="email" class="form-control" id="inputEmail">
+            <input type="email" class="form-control" ng-model="contact.mail" name="email" required>
           </div>
 
            <div class="form-group label-floating has-success">
             <label class="control-label" for="inputSuccess">Empresa: </label>
-            <input class="form-control" id="focusedInput1" type="text">
+            <input class="form-control" type="text" ng-model="contact.empresa" name="company" required>
           </div>
 
           <div class="form-group label-floating has-success">
             <label class="control-label" for="inputSuccess">Mensaje: </label>
-            <textarea class="form-control" rows="3" id="textArea"></textarea>
+            <textarea class="form-control" rows="3" ng-model="contact.mensaje" name="message" required></textarea>
           </div>
 
+          <div class="modal-footer text-center">
+            <button type="submit" ng-disabled="!contactForm.$valid" class="btn btn-success">Success</button>
+          </div>
         </form>
 
-      </div>
-      <div class="modal-footer text-center">
-        <a href="javascript:void(0)" class="btn btn-success">Success</a>
       </div>
     </div>
   </div>
