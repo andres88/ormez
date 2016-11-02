@@ -1,27 +1,36 @@
-.form-group
-	margin-top: 5px
-	margin-bottom: 20px
-
 .form-group.label-floating
-	label.control-label, .label-placeholder label.control-label
-		font-size: 14px
-	input
-		color: $slowBlack
-		font-size: $text-default
-	textarea
-		color: $slowBlack
-		font-size: $text-default
+  label.control-label, .label-placeholder label.control-label
+    font-size: 13px !important
+  input, textarea
+    color: #898888
+    font-size: 11px
 
 .modal-content
-	.modal-header
-		.modal-title
-			color: $slowBlack
-	.modal-footer
-		padding-bottom: 20px
-		text-align: center
+  .modal-header .modal-title
+    color: #898888
+  .modal-footer
+    padding-bottom: 20px
+    text-align: center
 
+.form-group
+  &.label-static label.control-label
+    top: -30px
+    left: 0
+    font-size: 11px !important
+    line-height: 1.07142857
+  &.label-floating
+    &.is-focused label.control-label, &:not(.is-empty) label.control-label
+      top: -30px
+      left: 0
+      font-size: 11px !important
+      line-height: 1.07142857
 
-.contactoForm
-	margin-top: 30px
-.btn-contacto
-	letter-spacing: 2px
+button, a, a:focus
+	outline: none !important
+
+.btn-custom
+	font-family: 'Abel'
+	font-size: $text-default
+	padding: 4px 30px 3px !important
+  letter-spacing: 2px !important
+  text-transform: none !important

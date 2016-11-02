@@ -1,27 +1,53 @@
 <div class="container">
+
   <div class="row">
-    <div class="col-md-4">
-     logo-slogan
+    <div class="col-md-4 content-slogan">
+     <h6 class="slogan">
+        NI MODO, ESTAMOS EN <br>LOS PIES DE TODO MÉXICO.
+      </h6>
     </div>
     <div class="col-md-4">
       <h6>
         CONECTA CON NOSTROS
       </h6>
-      <a href="javascript:;"><i class="mdi mdi-facebook-box"></i> Facebook</a>
+      <a href="https://www.facebook.com/profile.php?id=100009067546279&fref=ts" target="_blank"><i class="mdi mdi-facebook-box"></i> Facebook</a>
       <h6>
         ESCRIBENOS
       </h6>
-      <a href="javascript:;"><i class="mdi mdi-email"></i> Mail</a>
+      <a href="javascript: void(0)" data-toggle="modal" data-target="#modalContacto"><i class="mdi mdi-email"></i> Mail</a>
     </div>
     <div class="col-md-4">
       <h6>
         MÁS INFORMACIÓN
       </h6>
       <p>Calle Emiliano Zapata No. 73 Col. El infiernillo Cuautitlan, Edo. de México C.P 54878  Tel. 5 870 12 15 - 5 870 19 94</p>
-      <a href="javascript:;"><i class="mdi mdi-map-marker"></i> Ver ubicación</a>
+      <a href="javascript:;" data-toggle="modal" data-target="#modalUbicacion"><i class="mdi mdi-map-marker"></i> Ver ubicación</a>
     </div>
   </div>
   <div>
     <p>Calzado Ormez Copyright © 2016</p>
   </div>
+
+
+  <div data-easein="fadeIn" class="modal modalUbicacion" id="modalUbicacion" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header text-center">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h5 class="modal-title" id="myModalLabel"><i class="mdi mdi-map-marker"></i> Ubicación </h5>
+        </div>
+        <div class="modal-body">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3757.302189616694!2d-99.17756298564049!3d19.65710898675717!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1f59a5b553c43%3A0x3db1b47ebf52b9fd!2sEmiliano+Zapata+73%2C+El+Infiernillo%2C+54878+Cuautitl%C3%A1n%2C+M%C3%A9x.!5e0!3m2!1ses!2smx!4v1478056859023" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+        <div class="modal-footer">
+          <a href="javascript:void(0)" data-dismiss="modal" class="btn btn-raised btn-danger btn-custom">Cerrar</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
 </div>
